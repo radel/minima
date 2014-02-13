@@ -1,0 +1,954 @@
+
+<html>
+<head>
+	<title>{Title}</title>
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+	<meta name="text:Link 1 Name" content=""/>
+	<meta name="text:Link 1 URL" content=""/>
+
+	<meta name="text:Link 2 Name" content=""/>
+	<meta name="text:Link 2 URL" content=""/>
+
+	<meta name="text:Link 3 Name" content=""/>
+	<meta name="text:Link 3 URL" content=""/>
+
+	<meta name="author" content="Marco Bonomo"/>
+
+
+
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Sue+Ellen+Francisco' rel='stylesheet' type='text/css'>
+	
+	{block:Description}
+	<meta name="description" content="{MetaDescription}" />
+	{/block:Description}
+	
+	<style>
+
+		* { margin: 0; padding: 0; }    
+
+		body {
+			background: #ECEEF2;
+			font-family:'Lato';
+			font-size:80%;
+			color:#333;        
+			
+		}
+		
+	/* 
+	
+	Header and other important stuff
+	
+	*/
+	
+	ul#menu {
+		margin:0px 0px;
+		list-style:none;
+		padding:0;
+		text-align:right;
+		
+	}
+	
+	ul#menu li {
+		display:inline;
+	}
+	
+	ul#menu li a {
+		padding:10px;
+		text-decoration:none;
+		color:#fff;
+		text-shadow:0px 1px 1px #222;
+		text-transform: uppercase;
+		font-weight:600;
+		font-size:12px;
+		line-height:60px;
+	} 
+	
+	ul#menu li a:hover {
+		color:#fff;
+		text-shadow:0px 1px 1px #222;
+		border-bottom:2px solid #fff;
+	}
+
+	.header-fixed {
+		position: fixed;
+		padding:0px;
+		overflow: visible;
+		margin:0px auto;
+		width:100%;
+		z-index:150;
+		float:left;
+		
+	}
+
+	.header-fixed-bg {
+		position: fixed;
+		padding:0px;
+		overflow: visible;
+		margin:0px auto;
+		width:100%;
+		z-index:101;
+		height:60px;
+		top:0px;
+		left:0px;
+		background: rgba(0,0,0,.5);
+		box-shadow: 0px 2px 0px rgba(0,0,0,.1);
+	}
+
+	header {
+		position: absolute;
+		top:0px;
+		left:0px;
+		float:left;
+		width:100%;
+		background: url('http://static.tumblr.com/3mbebsn/sAsn0ye8a/8f86f552775f11e2b16122000a1f9e61_7.jpg') no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		box-shadow: 0px 2px 0px rgba(0,0,0,.1);
+		z-index: 120;
+		
+	}
+
+	header h1 {width:50%; float:left; box-sizing: border-box; height:60px; overflow: hidden;
+		
+
+	}
+	header ul#menu {width:50%; float:left; box-sizing: border-box; height:60px; overflow: hidden;}
+
+	.descr {float:left; width:100%; padding-top:60px;}
+
+	#description {width:1000px; background: rgba(255,255,255,.9); text-align:center; margin:0px 10px 10px 10px; padding:10px; box-shadow: 0px 2px 0px rgba(0,0,0,.1);-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;  font-size:110%; font-weight: 300; font-style: italic; float:left;}
+
+
+
+		.container {
+			margin:0 auto;
+			width:1040px;
+			clear: both;
+			
+
+		}
+
+		.page {
+			padding:120px 0px 20px 0px ;	
+		}
+		
+		a {
+			color:#888;
+			text-decoration:none;		
+		}
+		
+		h1 {    
+			
+			font-size:250%;
+			font-weight:400;
+			font-family: 'Sue Ellen Francisco';
+			text-transform:uppercase;
+			line-height:50px;
+			padding:10px;
+			padding-top:10px;
+			text-shadow:0px 1px 1px #222;
+		}
+		
+		h1 a {
+			color:#fff;
+		}
+		
+		.post h3, .post h2, .post .h1 {
+			font-family: 'Lato';
+			font-weight: 300;
+		}
+		
+	/* 
+	
+	General Elements
+	
+	*/
+	
+	
+	.post blockquote {
+		font-style:italic;
+		padding:5px;
+		border-left:1px solid #ddd;
+		
+	}
+	
+	.button { 
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		padding:2px 15px;
+		-moz-box-shadow: inset 0 0 1px #eee;
+		-webkit-box-shadow: inset 0 0 1px #eee;
+		box-shadow: inset 0 0 1px #eee;
+		background:#333;
+		border:1px solid #222;
+		color:#fff;
+	}
+	
+	input {
+		padding:5px;
+		border:1px solid #ddd;
+		margin:5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		-moz-box-shadow: inset 0 2 1px #eee;
+		-webkit-box-shadow: inset 0 2 1px #eee;
+		box-shadow: inset 0 2 1px #eee;
+	}	
+	
+	ol#posts {
+		list-style:none;
+		width:1100px;
+		margin:0 auto;
+		clear:both;
+	}
+	
+	img {
+		
+		height:auto;
+		overflow: hidden;		
+	}
+
+	/* 
+	
+	Posts
+	
+	*/
+
+	.post {
+		
+		background: rgba(255,255,255,.95); 
+		width:480px;
+		padding:10px;
+		box-shadow: 0px 2px 0px rgba(0,0,0,.1);
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		overflow: hidden;
+		margin:10px;
+		position:relative;
+		float:left;
+
+	}
+
+	.post p {
+		margin-top:5px;
+		
+	}
+	
+
+	.quote {
+		font-size:250%;
+		font-weight:300;
+
+		letter-spacing:-1px;
+	}
+
+	.source {
+		margin:10px 0 0 0;
+		font-size:70%;
+		font-weight:normal;
+		letter-spacing:0px;
+	}
+
+	.link a.link, .text h3  {
+		font-family:'Lato';
+		font-size:200%;
+		font-weight:300;
+		letter-spacing:-1px;
+		margin:0 0 10px 0;
+	}
+	
+	.chat ul {
+		list-style:none;	
+	}
+	
+	.chat ul li.odd {
+		background:#eee;
+		text-shadow:0px 1px 1px #fff;	
+	}
+	
+	.chat ul li {
+		padding:5px;
+	}
+	
+	.audio .clear {
+		overflow:hidden;
+		
+
+	}
+
+	.audio {
+		padding:0px;
+		width:500px;
+
+	}
+
+	.audio .cover {
+		width:500px;
+		overflow: hidden;
+		float:left;
+		margin:0 0px 10px 0;
+		
+	}
+	
+	.audio .cover img {
+		width:500px;
+		height:auto;
+	}
+	
+	.audio .player, .audio .caption {
+		padding:2px;
+		width:496px;
+		margin:0 0 10px 0px;
+		float:left;
+		background:transparent;
+	}
+	
+	.text ul {
+		margin:0 0 0 20px;
+	}
+	
+	.photo .caption {
+		
+		float:left;
+		width:480px;
+		padding:10px;
+		
+	}
+
+	.photo .date, .photo .notescount, .photoset .date, .photoset .notescount {
+
+		padding:10px;
+
+	}
+
+
+	.photo-container img {
+		display: inline-block;
+		overflow: hidden;
+		-webkit-border-top-left-radius: 2px;
+		-webkit-border-top-right-radius: 2px;
+		-moz-border-radius-topleft: 2px;
+		-moz-border-radius-topright: 2px;
+		border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
+		width:500px;
+		height:auto;
+		margin:0px;
+		padding:0px;
+		-webkit-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, .15), inset 0px 1px .5px 1px rgba(255, 255, 255, .5);
+		-moz-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, .15), inset 0px 1px .5px 1px rgba(255, 255, 255, .5);
+		box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, .15), inset 0px 1px .5px 1px rgba(255, 255, 255, .5);
+		
+		
+
+	}
+
+	.photo-container {
+		position:relative;
+		z-index:100;
+		width:500px;
+		overflow: hidden;
+	}
+	
+	img.avatar {width:auto; height:auto;}
+
+	
+	
+	.photo, .video {
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px; padding:0px; 
+		position:static;
+		width:500px;
+	}
+	
+	.photoset {
+		list-style:none;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px; padding:0px; 
+		width:500px;
+		
+	}
+	
+	
+	.photoset img {
+		display: inline-block;
+		overflow: hidden;
+		margin-left:-55px;
+		-webkit-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, .15), inset 0px 1px .5px 1px rgba(255, 255, 255, .5);
+		-moz-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, .15), inset 0px 1px .5px 1px rgba(255, 255, 255, .5);
+		box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, .15), inset 0px 1px .5px 1px rgba(255, 255, 255, .5);
+		
+	}
+	
+    	 /* 
+	
+	Notes and overlay
+	
+	*/
+	
+	
+
+	.date {
+		line-height:12px;
+		width:200px;
+		float:left;
+		padding:10px 0px 0px 0px;
+		font-size:85%;
+		-webkit-border-top-right-radius: 5px;
+		-webkit-border-bottom-right-radius: 5px;
+		-moz-border-radius-topright: 5px;
+		-moz-border-radius-bottomright: 5px;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		z-index:0;
+	}
+	
+	.date a {
+		color:#aaa;
+		text-shadow:0px 1px 1px #fff;
+	}
+	
+	.notescount {
+		width:200px;
+		padding:10px 0px 0px 0px;
+		float:right;
+		text-align:right;	
+		font-size:85%;
+		-webkit-border-top-right-radius: 5px;
+		-webkit-border-bottom-right-radius: 5px;
+		-moz-border-radius-topright: 5px;
+		-moz-border-radius-bottomright: 5px;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		z-index:0;
+		
+	}
+
+
+	
+	.notescount a {
+		color:#aaa;
+		text-shadow:0px 1px 1px #fff;
+		
+	}
+	
+	ul.tags {
+		list-style:none;
+		width:480px;
+		float:left;
+		margin:10px 10px 10px 10px;
+	}
+	
+	ul.tags li {
+		display:inline;
+		font-size:75%;
+		
+	}    
+	
+	ol.notes {
+		list-style:none;
+		padding:5px;	
+		width:500px;
+		float:left;
+		line-height:20px;
+	}
+	
+    	/* 
+    		
+	Permalink page hacks
+	
+	*/
+	
+
+	
+	
+		/* 
+	
+	Footer and pagination buttons
+	
+	*/
+	
+	
+	#footer 
+	{
+		padding:25px;
+		color:#555;
+		text-align:center;
+	}
+	
+	#footer a {
+		color:#111;
+	}
+	
+	
+	.sidenext {
+		list-style:none;
+		width:100%;
+		margin:20px auto;
+		text-align:center;
+	}
+
+	.sidenext a {
+		background:#fff;
+		border:1px solid #aaa;
+		padding:5px;
+		margin:10px 20px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		-moz-box-shadow: 0 0 5px #ccc;
+		-webkit-box-shadow: 0 0 5px #ccc;
+		box-shadow: 0 0 5px #ccc;
+	}	
+
+
+
+	.video p {
+		padding:5px;
+	}
+	
+	.video blockquote {
+		padding:5px;
+		padding-left:15px;
+		border-left:2px solid #555;
+	}
+
+
+	
+
+	{CustomCSS}
+	
+
+</style>
+
+
+</head>
+<body>
+	<div class="header-fixed-bg">	 </div>
+	
+	<header>
+		
+		<div class="header-fixed">	  
+			<div class="container">
+				
+				
+				<h1><a href="/">{Title}</a></h1>
+				
+
+				
+
+				
+				
+				
+				
+				<ul id="menu">
+					<li><a href="/archive">archive</a></li>       
+					<li><a href="{RSS}">feed</a></li>       
+					{block:AskEnabled}
+					<li><a href="/ask">{AskLabel}</a></li> 
+					{/block:AskEnabled}
+					<li ><a href="http://www.bazinga.it">blog</a></li>
+					
+					<li ><a href="http://softgirls.tumblr.com">girls</a></li>
+
+					<li ><a href="http://upthethames.tumblr.com">london</a></li>
+
+					<li ><a href="http://www.tumblr.com/themes/by/radel">themes</a></li>
+					{block:IfLink1Name}<a href="{text:link 1 url}>{text:link 1 name}</a>{/block:IfLink1Name}
+					{block:IfLink2Name}<a href="{text:link 2 url}>{text:link 2 name}</a>{/block:IfLink2Name}
+					{block:IfLink3Name}<a href="{text:link 3 url}"class="nav">{text:link 3 name}</a>{/block:IfLink3Name}
+					
+				</ul>
+			</div>
+		</div>
+		<div class="descr">
+			<div class="container">
+				{block:Description}
+				<p id="description">{Description}</p>
+				{/block:Description}    
+			</div>
+		</div>
+
+	</header>
+	
+
+	<div class="container page">
+		
+		
+
+		<ol id="posts">
+			
+			
+			
+			
+			<div id="bloccopost">
+				{block:Posts}
+				
+				
+				{block:Text}
+				<li class="post text ">
+					{block:Title}
+					<h3><a href="{Permalink}">{Title}</a></h3>
+					{/block:Title}
+
+					{Body}
+					
+					
+					{block:HasTags}
+					<ul class="tags">
+						{block:Tags}
+						<li>
+							<a href="{TagURL}">#{Tag}</a>
+						</li>
+						{/block:Tags}
+					</ul>
+					{/block:HasTags}
+					
+					{block:NoteCount}   
+					<div class="notescount">
+						♥ <a href="{Permalink}">{NoteCount}</a>
+					</div>
+					{/block:NoteCount}
+					<div class="date">
+						<a href="{Permalink}"> {TimeAgo} </a>
+					</div>
+					{block:PostNotes}  
+					<div class="postnotes">
+						{PostNotes}
+					</div>
+					{/block:PostNotes}   
+					
+				</li>
+				{/block:Text}
+
+				{block:Photo}
+				
+				<li class="post photo  ">
+					
+					
+
+					
+
+					<div class="photo-container">
+						<a href="{Permalink}">
+							<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+						</a>
+						{block:Caption}
+						<div class="caption">{Caption}</div>
+						{/block:Caption}
+						
+						
+						
+						
+						
+						{block:HasTags}
+						<ul class="tags">
+							{block:Tags}
+							<li>
+								<a href="{TagURL}">#{Tag}</a>
+							</li>
+							{/block:Tags}
+						</ul>
+						{/block:HasTags}
+						
+						{block:NoteCount}   
+						<div class="notescount">
+							♥ <a href="{Permalink}">{NoteCount}</a>
+						</div>
+						{/block:NoteCount}
+						<div class="date">
+							<a href="{Permalink}"> {TimeAgo} </a>
+						</div>
+						
+						{block:PostNotes}  
+						<div class="postnotes">
+							{PostNotes}
+						</div>
+						{/block:PostNotes}
+						
+						
+						
+					</li>
+					
+					
+					
+					{/block:Photo}
+
+
+
+					{block:Photoset}
+					<li class="post photoset  ">
+						{block:IndexPage} 
+						{Photoset-500}
+						{/block:IndexPage} 
+						
+						{block:PermalinkPage} 
+						{Photoset-500}
+						{block:Caption}
+						<div class="caption">{Caption}</div>
+						{/block:Caption}
+						{/block:PermalinkPage}
+						
+						
+						
+						
+						{block:NoteCount}   
+						<div class="notescount">
+							♥ <a href="{Permalink}">{NoteCount}</a>
+						</div>
+						{/block:NoteCount}
+						<div class="date">
+							<a href="{Permalink}"> {TimeAgo} </a>
+						</div>
+						{block:PostNotes}  
+						<div class="postnotes">
+							{PostNotes}
+						</div>
+						{/block:PostNotes}   
+						
+					</li>
+					
+					
+					{/block:Photoset}
+					
+					
+					
+
+					{block:Quote}
+					<li class="post  ">
+						<p class="quote">"{Quote}"</p>
+
+						{block:Source}
+						<div class="source">{Source}</div>
+						{/block:Source}
+						
+						
+						{block:NoteCount}   
+						<div class="notescount">
+							♥ <a href="{Permalink}">{NoteCount}</a>
+						</div>
+						{/block:NoteCount}
+						<div class="date">
+							<a href="{Permalink}"> {TimeAgo} </a>
+						</div>
+						{block:PostNotes}  
+						<div class="postnotes">
+							{PostNotes}
+						</div>
+						{/block:PostNotes}   
+						
+					</li>
+					{/block:Quote}
+
+					{block:Link}
+					
+					<li class="post link  ">
+						<a href="{URL}" class="link" {Target}>{Name}</a>
+
+						{block:Description}
+						<div class="description">{Description}</div>
+						{/block:Description}
+						
+						
+						
+						{block:NoteCount}   
+						<div class="notescount">
+							♥ <a href="{Permalink}">{NoteCount}</a>
+						</div>
+						{/block:NoteCount}
+						<div class="date">
+							<a href="{Permalink}"> {TimeAgo} </a>
+						</div>
+						{block:PostNotes}  
+						<div class="postnotes">
+							{PostNotes}
+						</div>
+						{/block:PostNotes}   
+						
+					</li>
+					{/block:Link}
+
+					{block:Chat}
+					<li class="post chat  ">
+						{block:Title}
+						<h3><a href="{Permalink}">{Title}</a></h3>
+						{/block:Title}
+
+						<ul class="chat">
+							{block:Lines}
+							<li class="{Alt} user_{UserNumber}">
+								{block:Label}
+								<span class="label">{Label}</span>
+								{/block:Label}
+
+								{Line}
+							</li>
+							{/block:Lines}
+						</ul>
+						
+						
+						{block:NoteCount}   
+						<div class="notescount">
+							♥ <a href="{Permalink}">{NoteCount}</a>
+						</div>
+						{/block:NoteCount}
+						<div class="date">
+							<a href="{Permalink}"> {TimeAgo} </a>
+						</div>
+						{block:PostNotes}  
+						<div class="postnotes">
+							{PostNotes}
+						</div>
+						{/block:PostNotes}   
+						
+					</li>
+					{/block:Chat}
+
+					{block:Video}
+					<li class="post video">
+						
+						
+						{block:IndexPage} 
+						{Video-500}
+						{/block:IndexPage}
+						
+						{block:PermalinkPage} 
+						{Video-500}
+						{/block:PermalinkPage}
+						
+						
+
+						{block:Caption}
+						<div class="caption">{Caption}</div>
+						{/block:Caption}
+						
+						
+						
+						{block:NoteCount}   
+						<div class="notescount">
+							♥ <a href="{Permalink}">{NoteCount}</a>
+						</div>
+						{/block:NoteCount}
+						<div class="date">
+							<a href="{Permalink}"> {TimeAgo} </a>
+						</div>
+						{block:PostNotes}  
+						<div class="postnotes">
+							{PostNotes}
+						</div>
+						{/block:PostNotes}   
+						
+					</li>
+					{/block:Video}
+
+					{block:Audio}
+					<li class="post audio  ">
+						<div class="clear">
+							{block:AlbumArt}
+							<img class="cover" src="{AlbumArtURL}">
+							{/block:AlbumArt}
+							<div class="player">
+								{AudioPlayerWhite}
+
+								{block:Caption}
+								<div class="caption">{Caption}</div>
+								{/block:Caption}
+								
+								
+								{block:NoteCount}   
+								<div class="notescount">
+									♥ <a href="{Permalink}">{NoteCount}</a>
+								</div>
+								{/block:NoteCount}
+								<div class="date">
+									<a href="{Permalink}"> {TimeAgo} </a>
+								</div>
+								{block:PostNotes}  
+								<div class="postnotes">
+									{PostNotes}
+								</div>
+								{/block:PostNotes}   
+								
+							</div>
+						</li>
+						{/block:Audio}
+						
+						{/block:Posts}
+					</div>
+				</ol>
+				
+
+				
+			</div>
+			
+		</div>
+		
+		<div class="container">
+			<div class="sidenext">
+				{block:PreviousPage}
+				<a href="{PreviousPage}">&#171; Previous</a>
+				
+				{/block:PreviousPage}
+
+				{block:NextPage}
+				<div id="page-nav"><a href="{NextPage}">Next &#187;</a></div>
+				{/block:NextPage}
+
+			</div>
+			
+			<div id="footer">
+				
+				<p>Powered by <a href="http://tumblr.com/">Tumblr</a>. 
+					copyright {CopyrightYears} {Title} - theme by <a href="http://tumblr.bazinga.it">Marco Bonomo</a>
+				</div>
+			</div>
+			
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+			<script type="text/javascript" src="http://static.tumblr.com/bswe8t6/UFVlryaq2/jquerymsnryv2.js"></script>
+			<script type="text/javascript">
+				$(window).load(function(){
+					var $wall = $('#posts');
+					$wall.imagesLoaded(function(){
+						$wall.masonry({
+							itemSelector: '.post',
+							isAnimated : false
+						});
+					});
+
+					$wall.infinitescroll({
+						navSelector    : '#page-nav',
+						nextSelector   : '#page-nav a',
+						itemSelector   : '.post',
+						bufferPx       : 2000,
+						debug          : false,
+						errorCallback: function() {
+							$('#infscr-loading').fadeOut('normal');
+						}},
+						function( newElements ) {
+							var $newElems = $( newElements );
+							$newElems.hide();
+							$newElems.imagesLoaded(function(){
+								$wall.masonry( 'appended', $newElems,{isAnimated: false}, function(){$newElems.fadeIn('slow');} );
+							});
+						}); $('#posts').show(500);
+				});
+			</script>
+
+
+			
+			
+		</body>
+		</html>
