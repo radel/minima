@@ -4,6 +4,8 @@
 	<link rel="shortcut icon" href="{Favicon}">
 	<link rel="alternate" type="application/rss+xml" href="{RSS}">
 
+	<meta name="text:Header Background URL" content=""/>
+
 	<meta name="text:Link 1 Name" content=""/>
 	<meta name="text:Link 1 URL" content=""/>
 
@@ -11,7 +13,9 @@
 	<meta name="text:Link 2 URL" content=""/>
 
 	<meta name="text:Link 3 Name" content=""/>
-	<meta name="text:Link 3 URL" content=""/>
+	<meta name="text:Link 3 URL" content=""/>	
+	
+
 
 	<meta name="author" content="Marco Bonomo"/>
 
@@ -98,19 +102,16 @@
 	}
 
 	header {
-		position: absolute;
-		top:0px;
-		left:0px;
-		float:left;
-		width:100%;
-		background: url('http://static.tumblr.com/3mbebsn/sAsn0ye8a/8f86f552775f11e2b16122000a1f9e61_7.jpg') no-repeat center center fixed; 
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		box-shadow: 0px 2px 0px rgba(0,0,0,.1);
-		z-index: 120;
-		
+	    	position: absolute;
+	    	top:0px;
+	    	left:0px;
+	    	float:left;
+	    	width:100%;
+			background: url('http://static.tumblr.com/3mbebsn/76sn1f9np/2014-02-20_07.56.37_1.jpg') no-repeat top center fixed; 
+			 {block:IfHeaderBackgroundURL}	background: url('{text:header background url}') no-repeat top center fixed; {/block:IfHeaderBackgroundURL}
+  			box-shadow: 0px 2px 0px rgba(0,0,0,.1);
+			z-index: 120;
+			
 	}
 
 	header h1 {width:50%; float:left; box-sizing: border-box; height:60px; overflow: hidden;
